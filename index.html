@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="نوران — تجربة متجر مكملات غذائية فاخرة موجهة للسوق السعودي." />
+  <title>NŪRAN | نوران — مكملات مختارة بعناية</title>
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-strip">نموذج عرض احترافي — منتجات وأسعار وخصائص تجريبية وليست عروض بيع فعلية</div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      <a class="brand" href="#top" aria-label="نوران الرئيسية">
+        <span class="brand-en">NŪRAN</span>
+        <span class="brand-ar">نوران</span>
+      </a>
+      <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+        <a href="#shop">تسوق</a><a href="#goals">حسب الهدف</a><a href="#bundles">الباقات</a><a href="#why">لماذا نوران</a><a href="#journal">المجلة</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="بحث">⌕</button>
+        <button class="icon-btn" id="wishlistBtn" aria-label="المفضلة">♡<span class="count" id="wishCount">0</span></button>
+        <button class="icon-btn" id="cartBtn" aria-label="السلة">▱<span class="count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="drawer-head"><strong>القائمة</strong><button class="icon-btn" data-close-menu>×</button></div>
+    <a href="#shop">تسوق المنتجات</a><a href="#goals">حسب الهدف</a><a href="#bundles">الباقات</a><a href="#why">معايير الاختيار</a><a href="#journal">المجلة</a>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <main>
+    <section class="hero">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=2200&q=88" alt="أسلوب حياة صحي فاخر" fetchpriority="high" />
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="eyebrow">WELLNESS, REFINED</div>
+        <h1>روتين يومي<br><em>أكثر نقاءً.</em></h1>
+        <p>تجربة تسوق سعودية راقية لمكملات مختارة بعناية، بتصميم واضح ومعلومات تساعدك على المقارنة بثقة.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#shop">اكتشف المجموعة</a><a class="text-link" href="#goals">تسوّق حسب هدفك ←</a></div>
+        <div class="hero-trust"><span>✦ شحن تجريبي داخل المملكة</span><span>✦ أسعار بالريال السعودي</span><span>✦ تجربة عربية RTL بالكامل</span></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="مميزات المتجر"><div>اختيارات مركزة <b>•</b> تجربة فاخرة <b>•</b> معلومات واضحة <b>•</b> تصميم سعودي معاصر <b>•</b> تسوق سريع وآمن <b>•</b> اختيارات مركزة</div></section>
+
+    <section class="section" id="goals">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow dark">تسوّق بذكاء</span><h2>ابدأ من هدفك</h2></div><p>بدل التنقل بين مئات الخيارات، اختر المسار الأقرب لروتينك اليومي.</p></div>
+        <div class="goal-grid">
+          <button class="goal-card" data-category="energy"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=85" alt="النشاط والطاقة"><span><small>01</small><b>النشاط والطاقة</b><em>اكتشف المنتجات ←</em></span></button>
+          <button class="goal-card" data-category="performance"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85" alt="الأداء الرياضي"><span><small>02</small><b>الأداء الرياضي</b><em>اكتشف المنتجات ←</em></span></button>
+          <button class="goal-card" data-category="daily"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=85" alt="العافية اليومية"><span><small>03</small><b>العافية اليومية</b><em>اكتشف المنتجات ←</em></span></button>
+          <button class="goal-card" data-category="sleep"><img src="https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1000&q=85" alt="الاسترخاء والنوم"><span><small>04</small><b>الاسترخاء والنوم</b><em>اكتشف المنتجات ←</em></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow dark">THE EDIT</span><h2>اختيارات نوران</h2></div><p>مجموعة تجريبية مصممة لإظهار تجربة متجر متكاملة مع فرز، تصفية، مفضلة وسلة شراء.</p></div>
+        <div class="shop-toolbar">
+          <div class="chips" id="categoryChips">
+            <button class="chip active" data-filter="all">الكل</button><button class="chip" data-filter="daily">يومي</button><button class="chip" data-filter="energy">طاقة</button><button class="chip" data-filter="performance">رياضة</button><button class="chip" data-filter="sleep">نوم</button>
+          </div>
+          <select id="sortSelect" aria-label="ترتيب المنتجات"><option value="featured">الأبرز</option><option value="low">السعر: الأقل أولاً</option><option value="high">السعر: الأعلى أولاً</option><option value="rating">الأعلى تقييماً</option></select>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="editorial-split" id="why">
+      <div class="editorial-media"><img src="https://images.unsplash.com/photo-1556760544-74068565f05c?auto=format&fit=crop&w=1400&q=88" alt="روتين العافية"></div>
+      <div class="editorial-copy">
+        <span class="eyebrow">OUR STANDARD</span><h2>تفاصيل أقل.<br>ثقة أكبر.</h2>
+        <p>في نوران، التجربة مصممة حول الوضوح: أسماء مباشرة، جرعات ظاهرة، مكونات أساسية سهلة القراءة، ومقارنة سريعة بين المنتجات.</p>
+        <div class="standards"><div><b>01</b><span><strong>شفافية المعلومات</strong><small>بطاقات منتج منظمة بعيداً عن المبالغة التسويقية.</small></span></div><div><b>02</b><span><strong>تجربة محلية</strong><small>واجهة عربية، ريال سعودي، ورسائل مناسبة للسوق السعودي.</small></span></div><div><b>03</b><span><strong>تصميم سريع</strong><small>متجاوب بدقة مع الهاتف والتابلت وسطح المكتب.</small></span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="bundles">
+      <div class="container bundle-wrap">
+        <div class="bundle-copy"><span class="eyebrow dark">NŪRAN ROUTINES</span><h2>روتينك، في باقة واحدة.</h2><p>باقات تجريبية تجمع اختيارات متكاملة وتعرض آلية Upsell وBundle Pricing بشكل أنيق.</p><button class="btn btn-dark" id="bundleAdd">أضف باقة الأداء — 289 ر.س</button><small>السعر تجريبي ضمن نموذج العرض.</small></div>
+        <div class="bundle-visual">
+          <div class="bottle large"><i>NŪRAN</i><b>WHEY 24</b><small>PROTEIN</small></div>
+          <div class="bottle"><i>NŪRAN</i><b>CREA 5</b><small>CREATINE</small></div>
+          <div class="bottle short"><i>NŪRAN</i><b>HYDRA</b><small>ELECTROLYTES</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journal" id="journal">
+      <div class="container"><div class="section-head"><div><span class="eyebrow dark">NŪRAN JOURNAL</span><h2>دليل العافية</h2></div><a class="text-link dark-link" href="#journal">عرض الكل ←</a></div>
+        <div class="journal-grid">
+          <article><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=82" alt="رياضة"><small>الأداء • 5 دقائق</small><h3>كيف تبني روتين مكملات أبسط وأكثر قابلية للاستمرار؟</h3><a href="#journal">اقرأ المقال ←</a></article>
+          <article><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=82" alt="عافية"><small>العافية • 4 دقائق</small><h3>قراءة ملصق المكمل الغذائي: ما المعلومات التي تستحق انتباهك؟</h3><a href="#journal">اقرأ المقال ←</a></article>
+          <article><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82" alt="نمط حياة"><small>روتين يومي • 6 دقائق</small><h3>ثلاث عادات صغيرة تساعدك على تنظيم يومك قبل التفكير في المكملات.</h3><a href="#journal">اقرأ المقال ←</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter"><div class="container newsletter-inner"><div><span class="eyebrow">THE NŪRAN LIST</span><h2>محتوى أخف. اختيارات أذكى.</h2><p>اشترك لتجربة نموذج رسالة ترحيبية وعروض أعضاء المتجر.</p></div><form id="newsletterForm"><input type="email" placeholder="البريد الإلكتروني" required><button class="btn btn-gold">انضم للقائمة</button></form></div></section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><a class="brand footer-brand" href="#top"><span class="brand-en">NŪRAN</span><span class="brand-ar">نوران</span></a><p>نموذج متجر إلكتروني فاخر للمكملات الغذائية، موجه للسوق السعودي لأغراض العرض والتجربة.</p></div><div><b>التسوق</b><a href="#shop">جميع المنتجات</a><a href="#bundles">الباقات</a><a href="#goals">حسب الهدف</a></div><div><b>المساعدة</b><a href="#why">معايير الاختيار</a><a href="#journal">دليل العافية</a><a href="#top">الشحن والإرجاع</a></div><div><b>مهم</b><p class="fine">المحتوى والمنتجات والأسعار والتقييمات في هذا النموذج تجريبية. المكملات لا تُستخدم بديلاً عن نظام غذائي متوازن أو المشورة الطبية.</p></div></div><div class="container footer-bottom"><span>© 2026 NŪRAN — Demo Concept</span><span>Saudi Arabia • SAR</span></div></footer>
+
+  <div class="drawer cart-drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><div><small>سلة التسوق</small><strong>اختياراتك</strong></div><button class="icon-btn" data-close-cart>×</button></div><div id="cartItems" class="drawer-body"></div><div class="cart-footer"><div><span>الإجمالي</span><strong id="cartTotal">0 ر.س</strong></div><button class="btn btn-gold wide" id="checkoutBtn">متابعة الدفع</button><small>نموذج عرض — الدفع غير مفعّل.</small></div></div>
+
+  <div class="search-panel" id="searchPanel" aria-hidden="true"><div class="search-box"><button class="icon-btn" data-close-search>×</button><span class="eyebrow dark">SEARCH NŪRAN</span><input id="searchInput" type="search" placeholder="ابحث عن منتج أو هدف..." autocomplete="off"><div id="searchResults"></div></div></div>
+
+  <div class="modal" id="productModal" aria-hidden="true"><div class="modal-card" id="modalCard"></div></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
