@@ -3,99 +3,159 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0a">
-<meta name="description" content="NŪRAN | نوران — متجر سعودي للمكملات الغذائية والرياضية.">
+<meta name="theme-color" content="#173f32">
+<meta name="description" content="NŪRAN | نوران — متجر سعودي للمكملات الغذائية والرياضية بهوية خاصة.">
 <title>NŪRAN | نوران — مكملات غذائية ورياضية</title>
-<link rel="preconnect" href="https://cdn.coverr.co">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=DM+Sans:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="v3.css">
+<link rel="stylesheet" href="v4.css">
+<script src="assets/hero.js" defer></script>
+<script src="assets/whey.js" defer></script>
+<script src="assets/creatine.js" defer></script>
+<script src="assets/daily.js" defer></script>
+<script src="assets/omega.js" defer></script>
+<script src="assets/sleep.js" defer></script>
+<script src="assets/hydration.js" defer></script>
+<script src="v4.js" defer></script>
 </head>
 <body>
-<div class="announce"><div class="container"><span>شحن لجميع مناطق المملكة</span><i>•</i><span>شحن مجاني للطلبات فوق 299 ر.س</span><i>•</i><span>منتجات NŪRAN بهوية موحّدة</span></div></div>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>توصيل لجميع مناطق المملكة</span><i>•</i>
+    <span>شحن مجاني للطلبات فوق 299 ر.س</span><i>•</i>
+    <span>خدمة العملاء 24/7</span>
+  </div>
+</div>
 
 <header class="site-header" id="top">
-  <div class="container nav-shell">
-    <button class="nav-icon mobile-only" id="menuBtn" aria-label="فتح القائمة">☰</button>
-    <nav class="desktop-nav">
-      <a href="#shop">المتجر</a><a href="#categories">الفئات</a><a href="#bestsellers">الأكثر مبيعًا</a><a href="#bundles">الباقات</a><a href="#standard">معيار نوران</a>
-    </nav>
-    <a class="brand" href="#top"><span>NŪRAN</span><small>نوران</small></a>
-    <div class="nav-actions">
-      <button class="nav-icon" id="searchBtn" aria-label="بحث">⌕</button>
-      <button class="nav-icon" id="wishBtn" aria-label="المفضلة">♡<b id="wishCount">0</b></button>
-      <button class="nav-icon" id="cartBtn" aria-label="السلة">▱<b id="cartCount">0</b></button>
+  <div class="container header-main">
+    <a class="brand" href="#top" aria-label="نوران الرئيسية">
+      <span>NŪRAN</span><small>نوران</small>
+    </a>
+    <div class="desktop-search">
+      <span>⌕</span>
+      <input id="headerSearch" type="search" placeholder="ابحث عن المنتجات، الفئات أو الأهداف..." autocomplete="off">
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      <button class="icon-btn desktop-search-btn" id="searchBtn" aria-label="بحث">⌕</button>
+      <button class="icon-btn" id="wishBtn" aria-label="المفضلة">♡<b id="wishCount">0</b></button>
+      <button class="icon-btn" id="cartBtn" aria-label="السلة">▱<b id="cartCount">0</b></button>
     </div>
   </div>
+  <nav class="category-nav container" id="categoryNav"></nav>
 </header>
 
-<aside class="mobile-menu" id="mobileMenu">
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="drawer-head"><div><small>NŪRAN</small><strong>القائمة</strong></div><button data-close-menu>×</button></div>
-  <a href="#shop">المتجر <span>←</span></a><a href="#categories">الفئات <span>←</span></a><a href="#bestsellers">الأكثر مبيعًا <span>←</span></a><a href="#bundles">الباقات <span>←</span></a><a href="#standard">معيار نوران <span>←</span></a>
+  <a href="#shop">جميع المنتجات <span>←</span></a>
+  <a href="#categories">الفئات <span>←</span></a>
+  <a href="#offers">العروض <span>←</span></a>
+  <a href="#bestsellers">الأكثر مبيعًا <span>←</span></a>
+  <a href="#bundles">الباقات <span>←</span></a>
+  <a href="#about">عن NŪRAN <span>←</span></a>
 </aside>
 <div class="backdrop" id="backdrop"></div>
 
 <main>
 <section class="hero">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="https://cdn.coverr.co/videos/coverr-taking-vitamins-230/thumbnail?width=1600">
-    <source src="https://cdn.coverr.co/videos/coverr-taking-vitamins-230/1080p.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">NŪRAN PERFORMANCE & WELLNESS</span>
-      <h1>مكملات مصممة<br><em>كعلامة واحدة.</em></h1>
-      <p>من البروتين والكرياتين إلى الفيتامينات، الأوميغا، المناعة والنوم — مجموعة متكاملة بهوية NŪRAN الموحدة واختيارات واضحة لكل هدف.</p>
-      <div class="hero-actions"><a class="btn gold" href="#shop">تسوّق المجموعة <b>←</b></a><a class="hero-link" href="#categories">اختَر حسب الفئة</a></div>
-      <div class="hero-metrics"><div><strong>40+</strong><span>منتج</span></div><div><strong>10</strong><span>فئات</span></div><div><strong>SAR</strong><span>أسعار محلية</span></div></div>
+      <div class="hero-badge">NŪRAN — SAUDI WELLNESS BRAND</div>
+      <h1>مكملات غذائية<br><em>بهويّة تستحق الثقة.</em></h1>
+      <p>مجموعة NŪRAN تجمع البروتين، الكرياتين، الفيتامينات، الأوميغا، دعم النوم والترطيب في عائلة واحدة بتصميم موحّد وتجربة تسوق واضحة.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#shop">تسوّق الآن <b>←</b></a>
+        <a class="btn secondary" href="#categories">اكتشف الفئات</a>
+      </div>
+      <div class="hero-points">
+        <div><strong>30+</strong><span>منتج</span></div>
+        <div><strong>6</strong><span>فئات رئيسية</span></div>
+        <div><strong>SAR</strong><span>أسعار محلية</span></div>
+      </div>
     </div>
-    <div class="hero-products" aria-hidden="true">
-      <div class="floating-pack pack-a"><div class="tub" style="--accent:#d1a34d"><i>NŪRAN</i><strong>WHEY 24</strong><small>PROTEIN</small><span>900G</span></div></div>
-      <div class="floating-pack pack-b"><div class="jar" style="--accent:#4f83c2"><i>NŪRAN</i><strong>CREA 5</strong><small>CREATINE</small><span>300G</span></div></div>
-      <div class="floating-pack pack-c"><div class="jar light" style="--accent:#6e9d74"><i>NŪRAN</i><strong>DAILY 01</strong><small>MULTI</small><span>60 CAPS</span></div></div>
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <img id="heroImage" alt="مجموعة مكملات NŪRAN" fetchpriority="high">
     </div>
   </div>
-  <button class="video-control" id="videoControl"><span></span><b id="videoLabel">إيقاف الحركة</b></button>
 </section>
 
-<section class="brand-strip"><div class="strip-track"><span>PROTEIN</span><i>✦</i><span>CREATINE</span><i>✦</i><span>VITAMINS</span><i>✦</i><span>OMEGA</span><i>✦</i><span>IMMUNITY</span><i>✦</i><span>SLEEP</span><i>✦</i><span>HYDRATION</span><i>✦</i><span>PROTEIN</span></div></section>
-
-<section class="section categories" id="categories">
+<section class="category-shortcuts" id="categories">
   <div class="container">
-    <div class="section-head"><div><span class="eyebrow dark">SHOP BY CATEGORY</span><h2>كل هدف له<br><em>لون ونظام.</em></h2></div><p>هوية العبوة واحدة، والألوان تفرّق بين الفئات بسرعة من أول نظرة.</p></div>
-    <div class="category-grid" id="categoryGrid"></div>
+    <div class="section-title small-title">
+      <div><span>تسوّق حسب الفئة</span><h2>اختَر ما يناسب روتينك</h2></div>
+      <a href="#shop">عرض الكل ←</a>
+    </div>
+    <div class="category-circles" id="categoryCircles"></div>
+  </div>
+</section>
+
+<section class="service-strip">
+  <div class="container service-grid">
+    <article><div class="service-icon">🚚</div><div><b>شحن سريع</b><span>إلى جميع مناطق المملكة</span></div></article>
+    <article><div class="service-icon">🔒</div><div><b>دفع آمن</b><span>واجهة جاهزة للربط ببوابة الدفع</span></div></article>
+    <article><div class="service-icon">✓</div><div><b>هوية NŪRAN</b><span>تصميم عبوات موحّد وواضح</span></div></article>
+    <article><div class="service-icon">☎</div><div><b>دعم العملاء</b><span>واجهة خدمة ودعم جاهزة</span></div></article>
+  </div>
+</section>
+
+<section class="section promo-section" id="offers">
+  <div class="container promo-grid">
+    <article class="promo-card promo-green" data-promo="daily">
+      <div class="promo-copy"><small>DAILY WELLNESS</small><h3>روتين يومي أبسط</h3><p>مجموعة الفيتامينات اليومية ضمن عائلة NŪRAN.</p><button data-promo-cat="daily">تسوّق الآن</button></div>
+      <img id="promoDaily" alt="NŪRAN Daily">
+    </article>
+    <article class="promo-card promo-warm" data-promo="protein">
+      <div class="promo-copy"><small>PERFORMANCE</small><h3>بروتين NŪRAN</h3><p>خيارات بروتين متعددة للروتين الرياضي.</p><button data-promo-cat="protein">تسوّق الآن</button></div>
+      <img id="promoWhey" alt="NŪRAN Whey">
+    </article>
+    <article class="promo-card promo-blue" data-promo="hydration">
+      <div class="promo-copy"><small>HYDRATION</small><h3>ترطيب بطابع مختلف</h3><p>إلكترولايتس ومنتجات ترطيب للاستخدام اليومي.</p><button data-promo-cat="hydration">تسوّق الآن</button></div>
+      <img id="promoHydration" alt="NŪRAN Hydration">
+    </article>
   </div>
 </section>
 
 <section class="section bestsellers" id="bestsellers">
   <div class="container">
-    <div class="section-head compact"><div><span class="eyebrow dark">BESTSELLERS</span><h2>الأكثر طلبًا</h2></div><a href="#shop">عرض كل المنتجات ←</a></div>
+    <div class="section-title">
+      <div><span>اختيارات العملاء</span><h2>الأكثر مبيعًا</h2></div>
+      <a href="#shop">عرض كل المنتجات ←</a>
+    </div>
     <div class="product-grid featured-grid" id="featuredGrid"></div>
   </div>
 </section>
 
-<section class="identity-section" id="standard">
-  <div class="container identity-grid">
-    <div class="identity-copy"><span class="eyebrow light">THE NŪRAN SYSTEM</span><h2>عبوة واحدة.<br><em>عائلة كاملة.</em></h2><p>بدل شكل مختلف لكل منتج، كل عبوات NŪRAN تعتمد نفس الشبكة البصرية: شعار ثابت، اسم منتج واضح، كود فئة، لون مميز، وحجم/عدد حصص ظاهر.</p>
-      <div class="identity-rules"><div><b>01</b><span><strong>شعار ثابت</strong><small>NŪRAN في أعلى كل عبوة</small></span></div><div><b>02</b><span><strong>لون حسب الفئة</strong><small>تمييز بصري سريع للمنتجات</small></span></div><div><b>03</b><span><strong>معلومات مباشرة</strong><small>الوزن، الحصص والمكوّن الرئيسي</small></span></div></div>
+<section class="brand-story" id="about">
+  <div class="container brand-story-grid">
+    <div class="brand-story-visual">
+      <div class="story-product story-large"><img id="storyWhey" alt="واي بروتين NŪRAN"></div>
+      <div class="story-product story-small"><img id="storyCreatine" alt="كرياتين NŪRAN"></div>
     </div>
-    <div class="identity-wall">
-      <div class="mini-pack"><div class="jar" style="--accent:#d1a34d"><i>NŪRAN</i><strong>WHEY 24</strong><small>PROTEIN</small></div></div>
-      <div class="mini-pack"><div class="jar" style="--accent:#4f83c2"><i>NŪRAN</i><strong>CREA 5</strong><small>CREATINE</small></div></div>
-      <div class="mini-pack"><div class="jar light" style="--accent:#6e9d74"><i>NŪRAN</i><strong>IMMUNE</strong><small>DAILY</small></div></div>
-      <div class="mini-pack"><div class="jar" style="--accent:#735a98"><i>NŪRAN</i><strong>MAG 03</strong><small>EVENING</small></div></div>
-      <div class="mini-pack"><div class="jar light" style="--accent:#d58248"><i>NŪRAN</i><strong>B12</strong><small>ENERGY</small></div></div>
+    <div class="brand-story-copy">
+      <span class="eyebrow">THE NŪRAN SYSTEM</span>
+      <h2>نفس البراند.<br><em>شخصية مختلفة لكل فئة.</em></h2>
+      <p>اعتمدنا قاعدة بصرية موحّدة للعبوات: جسم أبيض فاخر، تفاصيل ذهبية، شعار ثابت، ثم لون رئيسي مختلف حسب نوع المكمل. النتيجة عائلة منتجات تبدو متناسقة على الرف وفي المتجر الإلكتروني.</p>
+      <div class="brand-rules">
+        <div><b>01</b><span><strong>هوية ثابتة</strong><small>شعار ومقاسات وتكوين موحّد</small></span></div>
+        <div><b>02</b><span><strong>ألوان وظيفية</strong><small>أزرق للكرياتين، بنفسجي للنوم، تركواز للترطيب...</small></span></div>
+        <div><b>03</b><span><strong>صور Product-first</strong><small>العبوة نفسها هي العنصر البصري الرئيسي</small></span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section shop" id="shop">
+<section class="section catalog" id="shop">
   <div class="container">
-    <div class="section-head shop-head"><div><span class="eyebrow dark">FULL CATALOG</span><h2>مجموعة NŪRAN</h2></div><p>ابحث، صفّي، رتّب، احفظ في المفضلة أو أضف للسلة مباشرة.</p></div>
-    <div class="shop-toolbar">
-      <div class="chips" id="filterChips"></div>
-      <div class="toolbar-actions"><span id="resultCount"></span><select id="sortSelect"><option value="featured">الأبرز</option><option value="low">السعر: الأقل</option><option value="high">السعر: الأعلى</option><option value="rating">الأعلى تقييمًا</option></select></div>
+    <div class="section-title catalog-head">
+      <div><span>FULL CATALOG</span><h2>تسوّق مجموعة NŪRAN</h2></div>
+      <p>فلترة حسب الفئة، ترتيب بالسعر والتقييم، مفضلة وسلة شراء.</p>
+    </div>
+    <div class="catalog-toolbar">
+      <div class="filter-chips" id="filterChips"></div>
+      <div class="sort-area"><span id="resultCount"></span><select id="sortSelect"><option value="featured">الأبرز</option><option value="low">السعر: الأقل</option><option value="high">السعر: الأعلى</option><option value="rating">الأعلى تقييمًا</option></select></div>
     </div>
     <div class="product-grid" id="productGrid"></div>
   </div>
@@ -103,33 +163,69 @@
 
 <section class="section bundles" id="bundles">
   <div class="container">
-    <div class="section-head"><div><span class="eyebrow dark">NŪRAN ROUTINES</span><h2>باقات حسب الروتين</h2></div><p>اختيارات متكاملة بسعر أفضل من شراء كل منتج منفصل.</p></div>
+    <div class="section-title">
+      <div><span>NŪRAN ROUTINES</span><h2>باقات جاهزة</h2></div>
+      <p>مجموعات مختارة لتسهيل الشراء ورفع قيمة السلة.</p>
+    </div>
     <div class="bundle-grid" id="bundleGrid"></div>
   </div>
 </section>
 
-<section class="value-section">
-  <div class="container value-grid">
-    <article><span>01</span><b>شحن داخل المملكة</b><p>قواعد شحن وأسعار قابلة للتخصيص حسب شركة الشحن.</p></article>
-    <article><span>02</span><b>سلة ومفضلة</b><p>حفظ المنتجات والكميات على الجهاز تلقائيًا.</p></article>
-    <article><span>03</span><b>Checkout جاهز</b><p>نموذج بيانات عميل وعنوان وشحن ودفع قابل للربط.</p></article>
-    <article><span>04</span><b>قابل للتوسع</b><p>جاهز للربط بمخزون، بوابة دفع ولوحة إدارة.</p></article>
+<section class="newsletter">
+  <div class="container newsletter-grid">
+    <div><span>كن أول من يعرف</span><h2>عروض وإصدارات NŪRAN</h2><p>اشترك ليصلك جديد المنتجات والعروض الموسمية.</p></div>
+    <form id="newsletterForm"><input type="email" placeholder="البريد الإلكتروني" required><button class="btn primary">اشتراك</button></form>
   </div>
 </section>
-
-<section class="newsletter"><div class="container newsletter-grid"><div><span class="eyebrow light">NŪRAN MEMBERS</span><h2>كن أول من يعرف<br><em>بالإصدارات والعروض.</em></h2></div><form id="newsletterForm"><input type="email" placeholder="البريد الإلكتروني" required><button class="btn gold">اشتراك</button></form></div></section>
 </main>
 
-<footer><div class="container footer-grid"><div class="footer-about"><a class="brand footer-brand" href="#top"><span>NŪRAN</span><small>نوران</small></a><p>مكملات غذائية ورياضية بهوية موحّدة وتجربة تسوق عربية موجهة للسوق السعودي.</p></div><div><b>التسوّق</b><a href="#shop">كل المنتجات</a><a href="#bestsellers">الأكثر مبيعًا</a><a href="#bundles">الباقات</a></div><div><b>الفئات</b><a href="#categories">بروتين</a><a href="#categories">فيتامينات</a><a href="#categories">أداء رياضي</a></div><div><b>خدمة العملاء</b><a href="#top">الشحن والتوصيل</a><a href="#top">الاستبدال والاسترجاع</a><a href="#top">تواصل معنا</a></div></div><div class="container footer-bottom"><span>© 2026 NŪRAN</span><span>SAUDI ARABIA · SAR</span></div></footer>
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand"><a class="brand" href="#top"><span>NŪRAN</span><small>نوران</small></a><p>علامة مكملات غذائية ورياضية بهوية موحّدة وتجربة تسوق موجهة للسوق السعودي.</p></div>
+    <div><b>التسوّق</b><a href="#shop">جميع المنتجات</a><a href="#bestsellers">الأكثر مبيعًا</a><a href="#offers">العروض</a><a href="#bundles">الباقات</a></div>
+    <div><b>خدمة العملاء</b><a href="#top">الشحن والتوصيل</a><a href="#top">الاستبدال والاسترجاع</a><a href="#top">الأسئلة الشائعة</a><a href="#top">تواصل معنا</a></div>
+    <div><b>مهم قبل الإطلاق التجاري</b><p>يجب اعتماد التركيبة النهائية وبيانات الملصق والمصنّع والتسجيلات النظامية وسياسات الدفع والشحن قبل بيع أي SKU فعلي.</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 NŪRAN</span><span>SAUDI ARABIA · SAR</span></div>
+</footer>
 
-<div class="drawer cart-drawer" id="cartDrawer"><div class="drawer-head"><div><small>NŪRAN BAG</small><strong>سلة التسوق</strong></div><button data-close-cart>×</button></div><div class="drawer-body" id="cartItems"></div><div class="cart-footer"><div><span>المجموع</span><strong id="cartSubtotal">0 ر.س</strong></div><div class="shipping-note" id="shippingNote"></div><button class="btn gold wide" id="checkoutBtn">إتمام الطلب</button></div></div>
+<div class="drawer cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-head"><div><small>NŪRAN BAG</small><strong>سلة التسوق</strong></div><button data-close-cart>×</button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="cart-footer"><div class="subtotal"><span>المجموع</span><strong id="cartSubtotal">0 ر.س</strong></div><div class="shipping-note" id="shippingNote"></div><button class="btn primary wide" id="checkoutBtn">إتمام الطلب</button></div>
+</div>
 
-<div class="search-panel" id="searchPanel"><div class="search-box"><button data-close-search>×</button><span class="eyebrow dark">SEARCH NŪRAN</span><h3>ابحث في المجموعة</h3><div class="search-input"><span>⌕</span><input id="searchInput" type="search" placeholder="مثال: واي بروتين، كرياتين، فيتامين D..."></div><div id="searchResults"></div></div></div>
+<div class="search-panel" id="searchPanel" aria-hidden="true">
+  <div class="search-box">
+    <button data-close-search>×</button>
+    <span class="eyebrow">SEARCH NŪRAN</span>
+    <h3>ابحث في المنتجات</h3>
+    <div class="search-input"><span>⌕</span><input id="searchInput" type="search" placeholder="مثال: بروتين، كرياتين، أوميغا..." autocomplete="off"></div>
+    <div id="searchResults"></div>
+  </div>
+</div>
 
-<div class="modal" id="productModal"><div class="product-modal-card" id="productModalCard"></div></div>
+<div class="modal" id="productModal" aria-hidden="true"><div class="product-modal-card" id="productModalCard"></div></div>
 
-<div class="modal checkout-modal" id="checkoutModal"><div class="checkout-card"><button class="modal-close" data-close-checkout>×</button><div class="checkout-title"><span class="eyebrow dark">SECURE CHECKOUT</span><h2>إتمام الطلب</h2><p>أدخل بيانات التوصيل واختر طريقة الدفع.</p></div><form id="checkoutForm"><div class="form-grid"><label>الاسم الكامل<input name="name" required></label><label>رقم الجوال<input name="phone" inputmode="tel" placeholder="05xxxxxxxx" required></label><label>المدينة<select name="city" required><option value="">اختر المدينة</option><option>الرياض</option><option>جدة</option><option>مكة المكرمة</option><option>المدينة المنورة</option><option>الدمام</option><option>الخبر</option><option>أخرى</option></select></label><label>الحي<input name="district" required></label><label class="full">العنوان التفصيلي<textarea name="address" rows="3" required></textarea></label></div><div class="pay-methods"><label><input type="radio" name="payment" value="cod" checked><span><b>الدفع عند الاستلام</b><small>الدفع عند وصول الطلب</small></span></label><label><input type="radio" name="payment" value="online"><span><b>الدفع الإلكتروني</b><small>مدى / Visa / Mastercard / Apple Pay</small></span></label></div><div class="checkout-summary" id="checkoutSummary"></div><button class="btn dark wide" type="submit">تأكيد الطلب</button></form></div></div>
+<div class="modal checkout-modal" id="checkoutModal" aria-hidden="true">
+  <div class="checkout-card">
+    <button class="modal-close" data-close-checkout>×</button>
+    <span class="eyebrow">CHECKOUT</span><h2>بيانات الطلب</h2>
+    <form id="checkoutForm">
+      <div class="form-grid">
+        <label>الاسم الكامل<input name="name" required></label>
+        <label>رقم الجوال<input name="phone" inputmode="tel" placeholder="05xxxxxxxx" required></label>
+        <label>المدينة<select name="city" required><option value="">اختر المدينة</option><option>الرياض</option><option>جدة</option><option>مكة المكرمة</option><option>المدينة المنورة</option><option>الدمام</option><option>الخبر</option><option>أخرى</option></select></label>
+        <label>الحي<input name="district" required></label>
+        <label class="full">العنوان<textarea name="address" rows="3" required></textarea></label>
+      </div>
+      <div class="payment-options"><label><input type="radio" name="payment" value="cod" checked><span><b>الدفع عند الاستلام</b><small>يحتاج ربط نظام الطلبات قبل الإطلاق</small></span></label><label><input type="radio" name="payment" value="online"><span><b>دفع إلكتروني</b><small>مدى / Apple Pay / البطاقات بعد ربط حساب التاجر</small></span></label></div>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <button class="btn primary wide" type="submit">تأكيد الطلب</button>
+    </form>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
-<script src="v3.js" defer></script>
-</body></html>
+</body>
+</html>
