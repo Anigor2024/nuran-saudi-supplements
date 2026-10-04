@@ -109,3 +109,10 @@ footer{background:#102f25;color:#cbd5d0;padding:60px 0 22px}.footer-grid{display
 .product-gallery .zoom-row{flex-wrap:wrap}
 @media(max-width:1100px){.resume-grid{grid-template-columns:1fr 1fr}.my-dashboard{grid-template-columns:1fr}.my-side{position:static;grid-template-columns:1fr 1fr}.my-products{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.resume-grid{grid-template-columns:1fr}.resume-card{min-height:245px}.resume-art{height:120px}.my-metrics{grid-template-columns:1fr 1fr}.my-dashboard{gap:12px}.my-panel{padding:14px}.panel-head{align-items:flex-start;flex-direction:column}.my-side{grid-template-columns:1fr}.my-mini-products{grid-template-columns:1fr}.my-products{grid-template-columns:1fr 1fr}.my-products .product-image{height:185px}.account-btn{display:grid}}
+
+/* Product action rail final polish */
+@media(min-width:1101px){
+ .product-gallery{top:165px}
+ .product-gallery .zoom-row{position:relative;z-index:3;background:rgba(255,253,250,.96);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:0 10px 28px rgba(48,36,18,.06)}
+ .product-gallery .zoom-row button{flex:1;white-space:nowrap}
+}
