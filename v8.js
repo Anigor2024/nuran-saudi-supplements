@@ -1,3 +1,4 @@
+(()=>{if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement('link');m.rel='manifest';m.href='/manifest.webmanifest';document.head.appendChild(m)}if(!document.querySelector('link[rel="icon"]')){const i=document.createElement('link');i.rel='icon';i.type='image/svg+xml';i.href='/favicon.svg';document.head.appendChild(i)}})();
 const ASSETS=window.NURAN_ASSETS||{},CATS=window.NURAN_CATEGORIES||[],PRODUCTS=window.NURAN_PRODUCTS||[],BUNDLES=window.NURAN_BUNDLES||[];
 const STORE={freeShippingAt:299,shippingFee:25};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
