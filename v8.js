@@ -215,14 +215,15 @@ function goalsInit(){
   {id:'essentials',n:'05',title:'الأساسيات',sub:'Essentials',desc:'مجموعة مبسطة لمن يريد أقل عدد من القرارات.',ids:[11,16,6],tone:'#c18b4c'},
   {id:'value',n:'06',title:'أفضل قيمة',sub:'Smart value',desc:'اختيارات بسعر أخف وأحجام عملية.',ids:[8,15,19,24,26],tone:'#477f70'}
  ];let current=new URLSearchParams(location.search).get('goal')||'performance';
- const draw=()=>{const g=GOALS.find(x=>x.id===current)||GOALS[0];$('#goalSelector').innerHTML=GOALS.map(x=>`<button class="${x.id===g.id?'active':''}" data-goal="${x.id}"><span>${x.n}</span><b>${x.title}</b><small>${x.sub}</small></button>`).join('');$('#goalFocus').innerHTML=`<div><span class="eyebrow">${g.sub}</span><h2>${g.title}</h2><p>${g.desc}</p><a class="btn green" href="routine.html">خصص الاختيارات أكثر</a></div><div class="goal-focus-art" style="--tone:${g.tone}"><img src="${asset(PRODUCTS.find(p=>p.id===g.ids[0])?.asset)}"></div>`;const ps=g.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);$('#goalProducts').dataset.ids=ps.map(p=>p.id).join(',');$('#goalProducts').innerHTML=ps.map(productCard).join('');$('#goalProductsTitle').textContent=`اختيارات ${g.title}`;history.replaceState(null,'',`goals.html?goal=${g.id}`)};
+ const draw=()=>{const g=GOALS.find(x=>x.id===current)||GOALS[0],hero=PRODUCTS.find(p=>p.id===g.ids[0]),second=PRODUCTS.find(p=>p.id===g.ids[1]);$('#goalSelector').innerHTML=GOALS.map(x=>{const px=PRODUCTS.find(p=>p.id===x.ids[0]);return `<button class="${x.id===g.id?'active':''}" data-goal="${x.id}"><img class="goal-selector-img" src="${asset(px?.asset)}" alt=""><span>${x.n}</span><b>${x.title}</b><small>${x.sub}</small></button>`}).join('');$('#goalFocus').innerHTML=`<div><span class="eyebrow">${g.sub}</span><h2>${g.title}</h2><p>${g.desc}</p><a class="btn green" href="routine.html">خصص الاختيارات أكثر</a></div><div class="goal-focus-art" style="--tone:${g.tone}"><img class="goal-primary" src="${asset(hero?.asset)}" alt=""><img class="goal-secondary" src="${asset(second?.asset)}" alt=""></div>`;const ps=g.ids.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);$('#goalProducts').dataset.ids=ps.map(p=>p.id).join(',');$('#goalProducts').innerHTML=ps.map(productCard).join('');$('#goalProductsTitle').textContent=`اختيارات ${g.title}`;history.replaceState(null,'',`goals.html?goal=${g.id}`)};
  $('#goalSelector').addEventListener('click',e=>{const b=e.target.closest('[data-goal]');if(!b)return;current=b.dataset.goal;draw()});draw();
 }
 function circleInit(){
  const input=$('#circleAmount'),order=$('#circleOrder'),points=$('#circlePoints'),reward=$('#circleReward');const draw=()=>{const n=Math.max(0,+input.value||0),pts=Math.floor(n),r=Math.floor(pts/200)*10;order.textContent=money(n);points.textContent=new Intl.NumberFormat('ar-SA').format(pts);reward.textContent=money(r)};input?.addEventListener('input',draw);draw();
 }
+function hydrateVisualAssets(){$('[data-asset]').forEach(img=>{const src=asset(img.dataset.asset);if(src&&!img.src)img.src=src})}
 function motionInit(){
- if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const nodes=$('.section,.page-hero,.experience-band,.feature-rail,.product-card,.goal-card,.category-panel');nodes.forEach(n=>n.classList.add('reveal'));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});nodes.forEach(n=>io.observe(n));
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const nodes=$('.section,.page-hero,.experience-band,.feature-rail,.product-card,.goal-card,.category-panel,.journey-card');nodes.forEach(n=>n.classList.add('reveal'));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});nodes.forEach(n=>io.observe(n));
 }
 function myInit(){
  const recent=load('nuranRecent',[]).map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean).slice(0,4),routine=load('nuranRoutine',null),stack=load('nuranStack',[]).map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean),t=totals(),cartQty=Object.values(cart).reduce((a,b)=>a+b,0);
@@ -278,6 +279,6 @@ function init(){
  chrome();
  $('#quickViewModal')?.addEventListener('click',e=>{if(e.target===$('#quickViewModal'))closeQuickView()});
  const map={home:homeInit,categories:categoriesInit,shop:shopInit,product:productInit,bundles:bundlesInit,routine:routineInit,wishlist:wishlistInit,stack:stackInit,checkout:checkoutInit,journal:journalInit,support:supportInit,goals:goalsInit,circle:circleInit,my:myInit,about:aboutInit};
- (map[pageName()]||(()=>{}))();pwaInit();motionInit();
+ (map[pageName()]||(()=>{}))();hydrateVisualAssets();pwaInit();motionInit();
 }
 document.addEventListener('DOMContentLoaded',init);
