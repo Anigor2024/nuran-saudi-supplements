@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nuran-saudi-supplements.vercel.app/sitemap.xml
