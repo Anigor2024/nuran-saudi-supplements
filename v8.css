@@ -116,3 +116,48 @@ footer{background:#102f25;color:#cbd5d0;padding:60px 0 22px}.footer-grid{display
  .product-gallery .zoom-row{position:relative;z-index:3;background:rgba(255,253,250,.96);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:0 10px 28px rgba(48,36,18,.06)}
  .product-gallery .zoom-row button{flex:1;white-space:nowrap}
 }
+
+/* =========================
+   V8.1 — Visual Merchandising Upgrade
+   ========================= */
+.goals-visual-section{background:linear-gradient(180deg,#fff 0%,#fbf7f0 100%);overflow:hidden}
+.goal-grid-visual{grid-template-columns:repeat(2,1fr);gap:16px}
+.goal-card-visual{min-height:390px;padding:0;border-radius:26px;display:grid;grid-template-columns:.85fr 1.15fr;align-items:stretch;background:linear-gradient(145deg,#fffdf8,#f1e7d8);box-shadow:0 20px 60px rgba(47,34,15,.07);isolation:isolate;transition:.32s cubic-bezier(.2,.75,.25,1)}
+.goal-card-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.86),rgba(255,255,255,.15));z-index:-1}
+.goal-card-visual.performance{background:linear-gradient(135deg,#fffaf1,#eadab9)}
+.goal-card-visual.daily{background:linear-gradient(135deg,#f8fbf7,#dce9df)}
+.goal-card-visual.evening{background:linear-gradient(135deg,#faf8fc,#e6deee)}
+.goal-card-visual.hydration{background:linear-gradient(135deg,#f5fbfb,#dcefee)}
+.goal-card-visual:hover{transform:translateY(-8px);box-shadow:0 32px 80px rgba(47,34,15,.13)}
+.goal-card-visual .goal-card-copy{padding:30px 8px 28px 30px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:3}
+.goal-card-visual .goal-card-copy .num{font:700 7px "DM Sans";letter-spacing:.12em;color:#96702f;margin:0}
+.goal-card-visual h3{font-size:25px;line-height:1.15;margin:10px 0 8px}
+.goal-card-visual p{font-size:9px;color:#696158;max-width:270px;margin:0 0 18px}
+.goal-card-visual .goal-card-copy b{font-size:8px;color:var(--green);margin-top:auto}
+.goal-card-art{position:relative;overflow:hidden;min-height:390px;display:flex;align-items:flex-end;justify-content:center;padding:20px 10px 0}
+.goal-card-art:after{content:"NŪRAN";position:absolute;left:12px;top:8px;font:700 52px "Playfair Display";letter-spacing:.14em;color:rgba(255,255,255,.46);transform:rotate(-90deg) translateX(-35%);transform-origin:left top;pointer-events:none}
+.goal-halo{position:absolute;width:260px;height:260px;border-radius:50%;background:var(--tone);opacity:.20;filter:blur(2px);top:58px}
+.goal-card-art img{position:relative;z-index:2;width:58%;height:90%;object-fit:contain;filter:drop-shadow(0 22px 24px rgba(58,42,17,.19));transition:.35s}
+.goal-card-art img+img{width:43%;height:72%;margin-right:-24%;z-index:1;opacity:.96;transform:translateY(16px)}
+.goal-card-visual:hover .goal-card-art img:first-of-type{transform:translateY(-8px) rotate(-2deg) scale(1.035)}
+.goal-card-visual:hover .goal-card-art img+img{transform:translateY(8px) rotate(4deg) scale(1.02)}
+.journeys-visual-section{background:linear-gradient(180deg,#f6f0e6,#f0e7da);position:relative;overflow:hidden}
+.journeys-visual-section:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(201,164,93,.09);right:-180px;top:-180px;filter:blur(4px)}
+.journey-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:stretch}
+.journey-stage{min-height:520px;border-radius:28px;background:linear-gradient(135deg,#153b30,#224f40);color:#fff;position:relative;overflow:hidden;padding:34px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;box-shadow:0 28px 70px rgba(18,47,38,.20)}
+.journey-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 73% 42%,rgba(226,199,139,.22),transparent 26%),linear-gradient(115deg,transparent 35%,rgba(255,255,255,.035));pointer-events:none}
+.journey-stage-copy{position:relative;z-index:3}.journey-stage-copy>span{font:700 7px "DM Sans";letter-spacing:.14em;color:var(--gold2)}.journey-stage-copy h3{font-size:37px;line-height:1.12;margin:10px 0 13px}.journey-stage-copy p{font-size:9px;color:#c8d6d0;max-width:340px;margin-bottom:20px}
+.journey-products{height:430px;position:relative;display:grid;place-items:center}.journey-orb{position:absolute;width:330px;height:330px;border-radius:50%;border:1px solid rgba(230,205,153,.25);box-shadow:0 0 0 45px rgba(255,255,255,.02),0 0 0 90px rgba(255,255,255,.012)}.journey-products .jp{position:absolute;object-fit:contain;filter:drop-shadow(0 24px 25px rgba(0,0,0,.26));transition:.4s}.journey-products .jp1{width:54%;height:82%;right:23%;bottom:0;z-index:3}.journey-products .jp2{width:39%;height:63%;left:0;bottom:12%;z-index:2;transform:rotate(-6deg)}.journey-products .jp3{width:38%;height:58%;right:0;bottom:15%;z-index:1;transform:rotate(7deg)}.journey-stage:hover .jp1{transform:translateY(-9px)}.journey-stage:hover .jp2{transform:rotate(-9deg) translateY(-3px)}.journey-stage:hover .jp3{transform:rotate(10deg) translateY(-5px)}
+.journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.journey-card{min-height:166px;border:1px solid rgba(207,195,176,.78);border-radius:20px;background:rgba(255,255,255,.84);backdrop-filter:blur(8px);display:grid;grid-template-columns:110px 1fr;align-items:center;overflow:hidden;padding:10px;transition:.25s;position:relative}.journey-card:before{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(201,164,93,.11);right:-36px;top:-42px}.journey-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);background:#fff}.journey-card img{width:105px;height:135px;object-fit:contain;filter:drop-shadow(0 12px 13px rgba(56,40,15,.14));transition:.3s}.journey-card:hover img{transform:scale(1.05) rotate(-2deg)}.journey-card div{position:relative;z-index:2}.journey-card span{font:700 7px "DM Sans";color:#a07832}.journey-card b{display:block;font-size:12px;margin:8px 0 1px}.journey-card small{font:600 6px "DM Sans";color:#8b8378;letter-spacing:.05em}
+/* Goals page richer selector */
+.goal-selector button{min-height:145px;position:relative;overflow:hidden;padding:14px 12px 14px 112px}
+.goal-selector button .goal-selector-img{position:absolute;left:6px;bottom:0;width:100px;height:126px;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(58,42,17,.12));transition:.25s}
+.goal-selector button:hover .goal-selector-img,.goal-selector button.active .goal-selector-img{transform:translateY(-5px) scale(1.03)}
+.goal-selector button.active .goal-selector-img{filter:drop-shadow(0 13px 12px rgba(0,0,0,.18))}
+.goal-focus{min-height:440px}.goal-focus-art{height:360px}.goal-focus-art img{height:340px}.goal-focus-art .goal-secondary{position:absolute;height:260px;width:42%;left:4%;bottom:0;z-index:1;transform:rotate(-7deg);opacity:.92}.goal-focus-art .goal-primary{position:relative;z-index:2}
+@media(max-width:1100px){
+ .goal-grid-visual{grid-template-columns:1fr 1fr}.goal-card-visual{grid-template-columns:1fr;min-height:460px}.goal-card-art{min-height:270px;grid-row:1}.goal-card-visual .goal-card-copy{padding:20px 22px 24px}.journey-showcase{grid-template-columns:1fr}.journey-stage{min-height:470px}.journey-grid{grid-template-columns:repeat(3,1fr)}.journey-card{grid-template-columns:85px 1fr}.journey-card img{width:82px;height:110px}.goal-selector button{padding-left:90px}.goal-selector button .goal-selector-img{width:84px;height:110px}
+}
+@media(max-width:700px){
+ .goal-grid-visual{grid-template-columns:1fr}.goal-card-visual{min-height:430px}.goal-card-art{min-height:245px}.goal-card-art img{height:92%}.goal-card-visual h3{font-size:23px}.journey-stage{grid-template-columns:1fr;min-height:auto;padding:25px}.journey-stage-copy h3{font-size:31px}.journey-products{height:310px}.journey-orb{width:245px;height:245px}.journey-grid{grid-template-columns:1fr 1fr;gap:8px}.journey-card{grid-template-columns:70px 1fr;min-height:130px;padding:8px}.journey-card img{width:68px;height:92px}.journey-card b{font-size:9px}.goal-selector button{min-height:125px;padding:12px 10px 12px 80px}.goal-selector button .goal-selector-img{width:72px;height:96px}
+}
