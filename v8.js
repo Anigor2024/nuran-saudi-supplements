@@ -3,7 +3,8 @@ const ASSETS=window.NURAN_ASSETS||{},CATS=window.NURAN_CATEGORIES||[],PRODUCTS=w
 const STORE={freeShippingAt:299,shippingFee:25};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const money=n=>new Intl.NumberFormat('ar-SA',{style:'currency',currency:'SAR',maximumFractionDigits:0}).format(n);
-const asset=k=>ASSETS[k]||'';
+const STATIC_ASSETS={hero:'/assets/hero-static.svg',whey:'/assets/whey-static.svg',creatine:'/assets/creatine-static.svg',daily:'/assets/daily-static.svg',omega:'/assets/omega-static.svg',sleep:'/assets/sleep-static.svg',hydration:'/assets/hydration-static.svg'};
+const asset=k=>STATIC_ASSETS[k]||ASSETS[k]||'';
 const load=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}};
 let cart=load('nuranCart',{}),wish=load('nuranWish',[]),compare=load('nuranCompare',[]);
 
