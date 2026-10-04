@@ -1,3 +1,4 @@
+(()=>{const icon=document.createElement('link');icon.rel='icon';icon.href='favicon.svg';icon.type='image/svg+xml';document.head.appendChild(icon);const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='manifest.webmanifest';document.head.appendChild(manifest);})();
 const ASSETS=window.NURAN_ASSETS||{},CATS=window.NURAN_CATEGORIES||[],PRODUCTS=window.NURAN_PRODUCTS||[],BUNDLES=window.NURAN_BUNDLES||[];
 const STORE={freeShippingAt:299,shippingFee:25};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],money=n=>new Intl.NumberFormat('ar-SA',{style:'currency',currency:'SAR',maximumFractionDigits:0}).format(n);
