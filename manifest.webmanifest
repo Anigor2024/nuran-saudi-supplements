@@ -1,11 +1,44 @@
 {
+  "id": "/",
   "name": "NŪRAN | نوران",
   "short_name": "NŪRAN",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#fffdfa",
   "theme_color": "#173f32",
-  "description": "متجر NŪRAN للمكملات الغذائية والرياضية"
+  "description": "متجر NŪRAN للمكملات الغذائية والرياضية",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "المتجر",
+      "short_name": "المتجر",
+      "url": "/shop.html"
+    },
+    {
+      "name": "NŪRAN Match",
+      "short_name": "Match",
+      "url": "/routine.html"
+    },
+    {
+      "name": "My NŪRAN",
+      "short_name": "My NŪRAN",
+      "url": "/my.html"
+    }
+  ]
 }
