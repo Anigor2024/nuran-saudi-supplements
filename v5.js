@@ -156,7 +156,7 @@ function stackInit(){
  let selected=load('nuranStack',[]);
  const root=$('#stackProducts'),summary=$('#stackSummary'),count=$('#stackCount'),saveMsg=$('#stackSaveMsg');
  const pool=[1,6,11,16,21,26].map(id=>PRODUCTS.find(p=>p.id===id));
- function discount(n){return n>=4?.12:n===3?.08:n===2?.05:0}
+ function discount(n){return n>=4 ? .12 : n===3 ? .08 : n===2 ? .05 : 0}
  function draw(){
   root.innerHTML=pool.map(p=>`<button class="stack-choice ${selected.includes(p.id)?'active':''}" data-stack-id="${p.id}"><span class="stack-check">${selected.includes(p.id)?'✓':'+'}</span><img src="${asset(p.asset)}"><small>${CATS.find(c=>c.id===p.cat)?.ar||''}</small><b>${p.ar}</b><strong>${money(p.price)}</strong></button>`).join('');
   const ps=selected.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean),sub=ps.reduce((a,p)=>a+p.price,0),d=discount(ps.length),saving=Math.round(sub*d),total=sub-saving;
