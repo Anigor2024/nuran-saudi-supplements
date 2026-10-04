@@ -31,13 +31,14 @@ function chrome(){
        <div class="mega-links">
         <div><b>الفئات</b>${CATS.slice(0,3).map(c=>`<a href="shop.html?cat=${c.id}">${c.ar}</a>`).join('')}</div>
         <div><b>العافية</b>${CATS.slice(3).map(c=>`<a href="shop.html?cat=${c.id}">${c.ar}</a>`).join('')}</div>
-        <div><b>اكتشف</b><a href="shop.html">كل المنتجات</a><a href="bundles.html">الباقات</a><a href="categories.html">دليل الفئات</a><a href="routine.html">اختبار الروتين</a></div>
+        <div><b>اكتشف</b><a href="shop.html">كل المنتجات</a><a href="bundles.html">الباقات</a><a href="stack.html">Stack Builder</a><a href="categories.html">دليل الفئات</a><a href="routine.html">اختبار الروتين</a></div>
        </div>
       </div>
     </div>
     <a class="${navActive('shop')}" href="shop.html">كل المنتجات</a>
     <a class="${navActive('categories')}" href="categories.html">الفئات</a>
     <a class="${navActive('bundles')}" href="bundles.html">الباقات</a>
+    <a class="${navActive('stack')}" href="stack.html">Stack Builder</a>
     <a class="${navActive('routine')}" href="routine.html">NŪRAN Match</a>
     <a class="${navActive('journal')}" href="journal.html">المجلة</a>
     <a class="${navActive('about')}" href="about.html">عن نوران</a>
@@ -46,13 +47,13 @@ function chrome(){
  </header>
  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="drawer-head"><div><small>NŪRAN</small><strong>القائمة</strong></div><button data-close-menu>×</button></div>
-  <a href="index.html">الرئيسية <span>←</span></a><a href="shop.html">كل المنتجات <span>←</span></a><a href="categories.html">الفئات <span>←</span></a><a href="bundles.html">الباقات <span>←</span></a><a href="routine.html">NŪRAN Match <span>←</span></a><a href="journal.html">المجلة <span>←</span></a><a href="about.html">عن نوران <span>←</span></a><a href="support.html">المساعدة <span>←</span></a>
+  <a href="index.html">الرئيسية <span>←</span></a><a href="shop.html">كل المنتجات <span>←</span></a><a href="categories.html">الفئات <span>←</span></a><a href="bundles.html">الباقات <span>←</span></a><a href="stack.html">Stack Builder <span>←</span></a><a href="routine.html">NŪRAN Match <span>←</span></a><a href="journal.html">المجلة <span>←</span></a><a href="about.html">عن نوران <span>←</span></a><a href="support.html">المساعدة <span>←</span></a>
  </aside>
  <div class="backdrop" id="backdrop"></div>`;
  if(footer)footer.innerHTML=`
  <footer><div class="container footer-grid">
   <div class="footer-logo"><a class="brand" href="index.html"><span>NŪRAN</span><small>نوران</small></a><p>علامة مكملات غذائية ورياضية بهوية متناسقة وتجربة تسوق عربية موجهة للسوق السعودي.</p></div>
-  <div><b>التسوّق</b><a href="shop.html">جميع المنتجات</a><a href="categories.html">الفئات</a><a href="bundles.html">الباقات</a><a href="routine.html">اختبار الروتين</a></div>
+  <div><b>التسوّق</b><a href="shop.html">جميع المنتجات</a><a href="categories.html">الفئات</a><a href="bundles.html">الباقات</a><a href="stack.html">Stack Builder</a><a href="routine.html">اختبار الروتين</a></div>
   <div><b>اكتشف</b><a href="about.html">عن NŪRAN</a><a href="journal.html">المجلة</a><a href="support.html">الأسئلة الشائعة</a><a href="support.html#shipping">الشحن والإرجاع</a></div>
   <div><b>قبل الإطلاق التجاري</b><p>تُعتمد التركيبة النهائية والملصقات والمصنّع والتسجيلات النظامية وسياسات الدفع والشحن لكل SKU قبل البيع الفعلي.</p></div>
  </div><div class="container footer-bottom"><span>© 2026 NŪRAN</span><span>SAUDI ARABIA · SAR · AR/RTL</span></div></footer>`;
@@ -105,7 +106,7 @@ function shopInit(){
  const params=new URLSearchParams(location.search),cat=params.get('cat')||'all',wishOnly=params.get('wish')==='1';let category=cat;
  const checks=$('#categoryChecks');checks.innerHTML=CATS.map(c=>`<label><input type="radio" name="cat" value="${c.id}" ${category===c.id?'checked':''}> ${c.ar} <small>(${PRODUCTS.filter(p=>p.cat===c.id).length})</small></label>`).join('');
  function render(){let list=wishOnly?PRODUCTS.filter(p=>wish.includes(p.id)):PRODUCTS.filter(p=>category==='all'||p.cat===category);const sort=$('#shopSort').value;if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);if(sort==='rating')list.sort((a,b)=>b.rating-a.rating);$('#shopCount').textContent=`${list.length} منتج`;$('#productGrid').dataset.ids=list.map(p=>p.id).join(',');$('#productGrid').innerHTML=list.map(productCard).join('');}
- checks.addEventListener('change',e=>{category=e.target.value;render()});$('#shopSort').addEventListener('change',render);render();
+ checks.addEventListener('change',e=>{category=e.target.value;render();if(innerWidth<=1100)document.querySelector('.filter-panel')?.classList.remove('mobile-open')});$('#shopSort').addEventListener('change',render);document.querySelector('.filter-toggle')?.addEventListener('click',()=>document.querySelector('.filter-panel')?.classList.toggle('mobile-open'));render();
 }
 function productInit(){
  const id=+(new URLSearchParams(location.search).get('id')||1),p=PRODUCTS.find(x=>x.id===id)||PRODUCTS[0],cat=CATS.find(c=>c.id===p.cat);
