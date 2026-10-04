@@ -1,0 +1,11 @@
+{
+  "name": "NŪRAN | نوران",
+  "short_name": "NŪRAN",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdfa",
+  "theme_color": "#173f32",
+  "description": "متجر NŪRAN للمكملات الغذائية والرياضية"
+}
