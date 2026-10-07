@@ -191,3 +191,28 @@ footer{background:#102f25;color:#cbd5d0;padding:60px 0 22px}.footer-grid{display
 .journal-teaser.visual>small,.journal-teaser.visual>h3,.journal-teaser.visual>p,.journal-teaser.visual>a{margin-right:18px;margin-left:18px}
 .journal-teaser.visual>small{margin-top:16px}.journal-teaser.visual>a{margin-bottom:18px}
 @media(max-width:700px){.journal-teaser.visual{grid-template-rows:165px auto auto 1fr auto}.journal-teaser.visual .jt-art img{height:145px}.journal-teaser.visual .jt-art img+img{height:118px}}
+
+/* V10: packshot elements render as CSS backgrounds, never broken <img> placeholders */
+.goal-card-art .packshot{position:relative;z-index:2;width:58%;height:90%;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 22px 24px rgba(58,42,17,.19));transition:.35s}
+.goal-card-art .packshot+.packshot{width:43%;height:72%;margin-right:-24%;z-index:1;opacity:.96;transform:translateY(16px)}
+.goal-card-visual:hover .goal-card-art .packshot:first-of-type{transform:translateY(-8px) rotate(-2deg) scale(1.035)}
+.goal-card-visual:hover .goal-card-art .packshot+.packshot{transform:translateY(8px) rotate(4deg) scale(1.02)}
+.journey-products .packshot{position:absolute;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 24px 25px rgba(0,0,0,.26));transition:.4s}
+.journey-products .jp1{width:54%;height:82%;right:23%;bottom:0;z-index:3}
+.journey-products .jp2{width:39%;height:63%;left:0;bottom:12%;z-index:2;transform:rotate(-6deg)}
+.journey-products .jp3{width:38%;height:58%;right:0;bottom:15%;z-index:1;transform:rotate(7deg)}
+.journey-card>.packshot{width:105px;height:135px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 12px 13px rgba(56,40,15,.14));transition:.3s}
+.journey-card:hover>.packshot{transform:scale(1.05) rotate(-2deg)}
+.journal-img.packshot{position:absolute;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 18px 20px rgba(59,42,16,.16));z-index:3;transition:.35s}
+.journal-img.main{width:58%;height:90%;right:23%;bottom:-2%}
+.journal-img.secondary{width:34%;height:62%;left:2%;bottom:6%;z-index:2;transform:rotate(-7deg)}
+.journal-img.tertiary{width:30%;height:54%;right:1%;bottom:8%;z-index:1;transform:rotate(7deg)}
+.journal-topic>.packshot{height:230px;width:100%;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 17px 18px rgba(58,42,17,.16));position:relative;z-index:2;transition:.3s}
+.journal-topic:hover>.packshot{transform:translateY(-5px) rotate(-2deg)}
+.journal-teaser.visual .jt-art>.packshot{position:relative;z-index:2;width:52%;height:168px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 13px 14px rgba(57,41,16,.15));transition:.28s}
+.journal-teaser.visual .jt-art>.packshot+.packshot{width:38%;height:138px;margin-right:-16%;z-index:1;transform:rotate(-5deg)}
+.goal-selector-img.packshot{position:absolute;left:6px;bottom:0;width:100px;height:126px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 10px 10px rgba(58,42,17,.12));transition:.25s}
+.goal-focus-art .goal-primary.packshot{position:relative;z-index:2;width:62%;height:340px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 22px 20px rgba(62,43,15,.17))}
+.goal-focus-art .goal-secondary.packshot{position:absolute;height:260px;width:42%;left:4%;bottom:0;z-index:1;transform:rotate(-7deg);opacity:.92;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 18px 18px rgba(62,43,15,.15))}
+@media(max-width:1100px){.journey-card>.packshot{width:82px;height:110px}.goal-selector-img.packshot{width:84px;height:110px}}
+@media(max-width:700px){.journey-card>.packshot{width:68px;height:92px}.goal-selector-img.packshot{width:72px;height:96px}.journal-topic>.packshot{height:190px}.journal-teaser.visual .jt-art>.packshot{height:145px}.journal-teaser.visual .jt-art>.packshot+.packshot{height:118px}}
