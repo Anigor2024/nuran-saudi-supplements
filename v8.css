@@ -428,3 +428,20 @@ footer{background:#102f25;color:#cbd5d0;padding:60px 0 22px}.footer-grid{display
   .premium-feature-card h3{font-size:21px}
   .premium-feature-card p{font-size:12.5px}
 }
+
+/* V10.2 — readability pass */
+@media(min-width:701px){
+  .topbar{font-size:10px}
+  .site-search input{font-size:12px}
+  .main-nav>a,.mega-trigger{font-size:11px}
+  .section-head p{font-size:13px;line-height:1.9}
+  .section-head>a{font-size:11px}
+  .home-copy>p{font-size:14px;line-height:2}
+  .goal-card p,.category-panel p,.article-card p,.journal-teaser p,.about-copy p{font-size:11px;line-height:1.9}
+  .product-category{font-size:8px}
+  .product-en{font-size:8px}
+  .rating{font-size:9px}
+  .add-btn{font-size:9px}
+  .footer-grid a,.footer-grid p{font-size:10px}
+  .footer-grid b{font-size:11px}
+}
