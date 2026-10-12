@@ -1,0 +1,61 @@
+name: NURAN verified upgrade
+on:
+  push:
+    branches: [nuran-operational-v11]
+    paths: ['.nuran-transfer/source.b64', '.nuran-transfer/source.sha256']
+permissions:
+  contents: write
+jobs:
+  validate:
+    if: "!contains(github.event.head_commit.message, '[source-unpacked]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify and expand reviewed source
+        run: |
+          python3 - <<'PY'
+          import base64, gzip, hashlib, json, pathlib
+          root=pathlib.Path('.').resolve()
+          compressed=base64.b64decode((root/'.nuran-transfer/source.b64').read_text())
+          expected=(root/'.nuran-transfer/source.sha256').read_text().strip()
+          assert hashlib.sha256(compressed).hexdigest()==expected, 'Source checksum mismatch'
+          files=json.loads(gzip.decompress(compressed))
+          allowed=('commerce/','tools/','tests/','database/','api/')
+          names={'build.mjs','package.json','vercel.json','README.md','.env.example','.gitignore'}
+          for name,content in files.items():
+              target=(root/name).resolve()
+              assert target.is_relative_to(root) and (name.startswith(allowed) or name in names), name
+              target.parent.mkdir(parents=True,exist_ok=True)
+              target.write_text(content,encoding='utf-8')
+          print('Verified source files:',len(files))
+          PY
+      - name: Build and backend regression tests
+        run: |
+          node build.mjs
+          node --test tests/*.test.mjs
+          python3 tests/audit_links.py
+      - name: Install browser test tools
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Run real-browser navigation and commerce checks
+        run: python3 tests/browser_live.py
+      - name: Save readable tested source to upgrade branch
+        run: |
+          git config user.name 'NURAN validation bot'
+          git config user.email 'nuran-validation@users.noreply.github.com'
+          rm -rf .nuran-transfer
+          git add commerce tools tests database api build.mjs package.json vercel.json README.md .env.example .gitignore .nuran-transfer
+          git commit -m 'Publish validated readable NURAN commerce source [source-unpacked]'
+          git push origin HEAD:nuran-operational-v11
+      - name: Upload QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuran-v11-qa
+          path: artifacts/
+          retention-days: 7
